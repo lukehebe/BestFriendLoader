@@ -14,3 +14,5 @@ How to Use This Loader:
 4. **Run the Loader**
     - Double-click, run from cmd, or execute remotely.
     - If successful, your C2 session should light up.
+
+![BestFriend](BestFriend.png)
