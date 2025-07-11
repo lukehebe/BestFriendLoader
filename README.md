@@ -16,5 +16,6 @@ How to Use This Loader:
 5. **Run the Loader**
     - Double-click, run from cmd, or execute remotely.
     - If successful, your C2 session should light up.
+This is based off LogansBestFriend https://github.com/logangoins/LogansBestFriend/tree/main 
 
 ![BestFriend](BestFriend.png)
