@@ -16,6 +16,4 @@ How to Use This Loader:
     - Transfer `BestFriendLoader.exe` (your compiled loader) to any location you want, but it **must** be named exactly `BestFriendLoader.exe` (unless you change the regex in source).
 5. **Run the Loader**
     - Double-click, run from cmd, or execute remotely.
-    - If successful, your C2 session should light up.
-
-![BestFriend](BestFriend.png)
+    - If successful, you should see a session connect in your c2 ui
