@@ -2,6 +2,7 @@ This is a custom C++ loader that reads a raw shellcode payload from C:\Windows\T
 The loader includes some basic anti-analysis logic, such as a time-wasting loop and a check to make sure it’s being run as BestFriendLoader.exe.
 Once executed, the shellcode will run in-memory and establish whatever connection (or perform whatever action) the raw payload is designed for—typically a Cobalt Strike stageless or staged beacon, as used in red team/CRTO engagements.
 This is based off of LogansBestFriend https://github.com/logangoins/LogansBestFriend/tree/main the main difference is that LogansBestFriend uses hardcoded shellcode whereas this loader pulls it from C:\Windows\Temp
+This is by no means stealthy by todays standrads and will get flagged by AV/EDR in a real world setting this was able to bypass defender for the exam and shouldn't be relied on.
 
 How to Use This Loader:
 
